@@ -61,8 +61,8 @@ RUN cpanm install URI::Escape
 
 ## set up tool config and deployment area:
 
-ENV SRC /usr/local/src
-ENV BIN /usr/local/bin
+ENV SRC=/usr/local/src
+ENV BIN=/usr/local/bin
 
 
 ## EVM
