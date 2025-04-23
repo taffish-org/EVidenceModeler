@@ -49,7 +49,7 @@ RUN apt-get -qq update && apt-get -qq -y install \
     rsync \
     texlive-latex-base \
     tzdata \
-   unzip \
+    unzip \
     wget \
     x11-common \
     zlib1g-dev
