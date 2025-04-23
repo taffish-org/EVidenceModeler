@@ -82,4 +82,4 @@ RUN git clone https://github.com/EVidenceModeler/EVidenceModeler.git && \
 COPY Dockerfile $SRC/Dockerfile.$EVM_VERSION
 
 ENV TAFFISH_ENV=TAFFISH
-ENV TAFFISH_NAME=kmc
+ENV TAFFISH_NAME=EVidenceModeler
