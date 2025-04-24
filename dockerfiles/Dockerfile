@@ -75,7 +75,16 @@ ENV EVM_CO=da41edcf37bf556ba8b58fffc08570b186fe1f75
 RUN git clone https://github.com/EVidenceModeler/EVidenceModeler.git && \
     cd EVidenceModeler && \
     git checkout ${EVM_CO} && \
-    git submodule init && git submodule update && \
+    git submodule init && git submodule update         && \
+    if [ "$(uname -m)" = "aarch64" ]; \
+      then sed -i 's/-m64//g' ./plugins/ParaFly/Makefile;      \
+           sed -i 's/-m64//g' ./plugins/ParaFly/Makefile;      \
+           sed -i 's/-m64//g' ./plugins/ParaFly/config.log;    \
+           sed -i 's/-m64//g' ./plugins/ParaFly/config.status; \
+           sed -i 's/-m64//g' ./plugins/ParaFly/configure;     \
+           sed -i 's/-m64//g' ./plugins/ParaFly/configure.ac;  \
+           sed -i 's/-m64//g' ./plugins/ParaFly/src/Makefile;  \
+    fi && \
     make && \
     mv * $BIN/
 
